@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.0'
+services:
+  db:
+    image: mysql
+    container_name: service-db
+    #restart: always
+    environment:
+      MYSQL_DATABASE: posweb_db
+      MYSQL_ROOT_PASSWORD: secreta
+    ports:
+      - "3307:3306"
+    volumes:
+      - data-posweb:/var/lib/mysql
+
+volumes:
+  data-posweb:
